@@ -1,0 +1,9 @@
+<h1>Current Stock</h1>
+
+<b>Stock type</b><br>
+<% @stock.each do |stock|%>
+
+<p><a href="/stocks/<%= stock.id%>"><%= stock.stock_type %> </p><br>
+<%= stock.stock_level%> meters in stock
+
+<%end%>

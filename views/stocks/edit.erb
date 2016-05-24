@@ -1,0 +1,13 @@
+<h1>Add Stock</h1>
+
+<form action="/stocks/<%= @stocks.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  
+  <label for="stock_type">Materials:</label>
+  
+  <input type="number" name="stock_level" value="<%= @stocks.stock_level%>">
+ 
+
+  <input type="submit" name="ADD STOCK">
+
+  </form>
