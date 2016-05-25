@@ -22,6 +22,23 @@ post '/jobs' do
 end
 
 get '/jobs/:id' do
+  @stock = Stock.all
   @job = Job.find(params[:id])
   erb :'jobs/show'
+end
+
+get '/jobs/:id/edit' do
+  @jobs = Job.find(params[:id])
+  erb(:'jobs/edit')
+end
+
+put '/jobs/:id' do
+  @stock = Stock.all()
+  @jobs = Job.new(params)
+  # @jobs.check_stock(params)
+end
+
+delete '/jobs/:id' do
+  Job.destroy(params[:id])
+  redirect to('/jobs')
 end

@@ -26,6 +26,18 @@ class Job
     return Job.map_items(sql)
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM jobs WHERE id = #{id}"
+    SqlRunner.run_sql(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM jobs WHERE id = #{id}"
+    jobs = SqlRunner.run_sql(sql)
+    result = jobs.map { |j| Job.new(j)}
+    return result.first
+  end 
+
   def stock_price
     sql = "SELECT meter_price FROM stock_levels WHERE id = #{@stock_id}"
     price = SqlRunner.run_sql(sql).first
@@ -36,6 +48,12 @@ class Job
     sql = "SELECT rate FROM hourly_rates WHERE id = #{@hr_id}"
     price = SqlRunner.run_sql(sql).first
     return price['rate'].to_i
+  end
+
+  def show_stock
+    sql = "SELECT stock_type FROM stock_levels WHERE id = #{@stock_id}"
+    name = SqlRunner.run_sql(sql).first
+    return name['stock_type']
   end
 
   def self.map_items(sql)

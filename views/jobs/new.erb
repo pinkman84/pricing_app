@@ -2,19 +2,19 @@
 
 <form action="/jobs" method="post">
   <label for="client">Client Name</label>
-   <input type="text" name="client">
+   <input type="text" name="client"><br>
 
   <label for="address">Site Location</label>
-    <input type="text" name="address">
+    <input type="text" name="address"><br>
 
   <label for="stock_id">Stock Required</label>
     <select name ="stock_id"> 
       <% @stocks.each do |stock| %>
       <option value="<%= stock.id %>"><%=stock.stock_type%></option>
       <%end%>
-    </select>
+    </select><br>
     <label for="stock_req">Stock Required</label>
-      <input type="number" name="stock_req">
+      <input type="number" name="stock_req"><br>
 
 
     <label for="hr_id">Labour Required</label>
@@ -22,10 +22,10 @@
       <% @hrs.each do |hr| %>
       <option value="<%=hr.id%>"><%= hr.labour_type%></option>
       <%end%>
-      </select>
+      </select><br>
 
       <label for="hours_req">Labour Required</label>
-        <input type="number" name="hours_req">
+        <input type="number" name="hours_req"><br>
 
   <input type="submit" name="Add Job">
   

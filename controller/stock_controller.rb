@@ -21,7 +21,6 @@ get '/stocks/:id' do
 end
 
 get '/stocks/:id/edit' do
-  
   @stocks = Stock.find( params[:id] )
   erb( :'stocks/edit' )
 end
