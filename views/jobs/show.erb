@@ -1,14 +1,22 @@
 <h1>JOB</h1>
-<p>client: <%= @job.client%> address: <%= @job.address%><br> material: <%= @job.stock_req%> meters of <%= @job.show_stock %>
-</p>
-<p>
-  if this job went into productions stock would be reduced to
-  <%= stock_left = (@stock.stock_level - @job.stock_req)%>
 
-  <% if stock_left <= 0 %>
-     WARNING YOU WILL BE OUT OF STOCK
+
+
+<p>client: <%= @job.client%> address: <%= @job.address%><br> material: <%= @job.stock_req%> meters of <%= @job.show_stock %>
+</p><br>
+<p>
+  if this job went into productions stock would be reduced to <br>
+  <b><%= stock_left = (@stock.stock_level - @job.stock_req)%></b>
+<br>
+  <% if stock_left <= 0%>
+     <span class="blink">WARNING NOT ENOUGH STOCK!!!</span>
    <%end %>
 
 </p>
+
+
+  
+</h4>
 <a href="/jobs/<%= @job.id%>/edit">Delete Job?</a>
+
 

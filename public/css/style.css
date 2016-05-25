@@ -1,33 +1,31 @@
 
 body {
   font-family: 'Maven Pro', sans-serif;
-  background: #252839; 
-  
+  background-image:  url("http://www.gca-consulting.com/wp-content/uploads/2014/11/Steel-Beams-e1424098081368.jpg");
+  background-color: #000; 
+  text-align: center;
   background-size: 100%;
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
 
 ul li{
     display: inline-block;
-    background-color: #677077;
-    padding: 20px;
+    background-color: rgba(103,112,119,0.8);
     margin: 15px;
-    border-radius: 25px;
+    border-radius: 3px;
     text-decoration: none;
     color: #f2b632;
     font-size: 3em;
-    box-shadow: 3px;
-
-
+    font-weight: 700;
 }
 
-h1, h2, b {
-  color: #b5b5b7;
+
+
+h1, h2, h3{
+  text-align: center;
+  color: #f2b632;
 }
 
 nav a {
@@ -35,15 +33,23 @@ nav a {
 }
 
 a {
-  color: #677077;
+  color: #f2b632;
   text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  background-color: rgba(103,112,119,0.8);
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 3px;
+
 }
 
 p {
-  margin-left: 30px;
+  text-align: center;
   color:#677077;
-  background-color: #f2b632;
-  display: inline-block;
+  font-weight: 500;
+ /* background-color: rgba(242,182,50,0.8);*/
+  display: block;
   border-radius: 3px;
   padding: 10px;
 }
@@ -53,30 +59,93 @@ hr {
 }
 
 form {
-
+  margin-left: 50px;
 }
 
 input {
-  width: 60%;
+  width: 50%;
   margin: 10px;
   padding: 8px;
   border-radius: 5px;
   background-color: #b5b5b7;
-  font-size: 1.5em;
+  font-size: .75em;
+  text-align: center;
 }
 
 label {
   color: #f2b632;
   font-size: 2.2em;
+  align-self: center;
 }
 
 select {
   color:#f2b632;
-  width: 25%;
-
+  width: 400px;
+  align-self: center;
+  margin: 5px;
 }
 
 p b{
   color: #252839;
 }
 
+table {
+  width: 90%;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 5px;
+  background-color: rgba(103,112,119,0.8);
+
+}
+
+table input, select {
+  width: 80%;
+
+
+}
+
+table tr{
+  align-content: center;
+}
+
+table th {
+  background-color: #e0a62a;
+}
+
+table a {
+  background-color: #f2b632;
+  color: #252839;
+  display: block;
+}
+
+.blink {
+    -webkit-animation: blink 1s step-end infinite;
+            animation: blink 1s step-end infinite;
+            color: red;
+            font-weight: bold;
+}
+@-webkit-keyframes blink { 50% { visibility: hidden; }}
+        @keyframes blink { 50% { visibility: hidden; }
+
+}
+
+.company_details h1 {
+  color:677077;
+  font-size: 4em;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.company_details p {
+  font-size: .75em;
+  text-align: right;
+
+}
+
+#footer {
+   position:relative;
+   bottom:0;
+   width:100%;
+   height:60px;   
+   
+}

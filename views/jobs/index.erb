@@ -4,14 +4,26 @@
 
   <% @jobs.each do |job| %>
   <h2>Project</h2>
-  <p><b>Client:</b> <%= job.client %>
-    <b>Site Address</b> <%= job.address%><br>
-    <b>Hours Total:</b> £<%=  hours = (job.hrs_price * job.hours_req)  %>.00
-    <b>Stock Total</b> £<%= stock = (job.stock_price * job.stock_req) %>.00
-    <b>base cost of job:</b>£<%= total = hours + stock%>.00 <br>
-    <b>With profit margin this job should be:</b> £<%= total * 1.2%>0</p>
+
+  <table style="width:100%">
+    <tr>
+      <th>Client</th>
+      <th>Site Address</th>   
+      <th>Hours Total</th>     
+      <th>Stock Total</th> 
+      <th>base cost of job</th> 
+     <th>With profit margin this job should be</th> 
+   </tr>
+
+    <tr>
+      <td><%= job.client %></td>
+      <td><%= job.address%></td> 
+      <td>£<%=  hours = (job.hrs_price * job.hours_req)  %>.00</td>
+      <td>£<%= stock = (job.stock_price * job.stock_req) %>.00</td>
+      <td>£<%= total = hours + stock%>.00</td>   
+      <td>£<%= total * 1.2%>0</td>
+  </table>
+
     <a href="/jobs/<%= job.id%>">View Job</a>
   
-  
-  <hr>
   <%end%>

@@ -1,34 +1,45 @@
 <h2>Price a new Job</h2>
 
 <form action="/jobs" method="post">
-  <label for="client">Client Name</label>
-   <input type="text" name="client"><br>
+<table>
+  <tr>
+    <td><label for="client">Client Name</label></td>
+    <td><input type="text" name="client"></td>
+   </tr>
 
-  <label for="address">Site Location</label>
-    <input type="text" name="address"><br>
+  <tr>
+    <td><label for="address">Site Location</label></td>
+    <td><input type="text" name="address"></td>
+  </tr>
 
-  <label for="stock_id">Stock Required</label>
-    <select name ="stock_id"> 
-      <% @stocks.each do |stock| %>
-      <option value="<%= stock.id %>"><%=stock.stock_type%></option>
-      <%end%>
-    </select><br>
-    <label for="stock_req">Stock Required</label>
-      <input type="number" name="stock_req"><br>
+    <tr>
+      <td><label for="stock_id">Stock Required</label></td>
+      <td><select name ="stock_id"> 
+            <% @stocks.each do |stock| %>
+            <option value="<%= stock.id %>"><%=stock.stock_type%></option>
+            <%end%>
+          </select></td>
+          </tr>
+    <tr>
+      <td><label for="stock_req">Meters Required</label></td>
+      <td><input type="number" name="stock_req"></td>
+      </tr>
 
+    <tr>
+      <td><label for="hr_id">Labour Required</label></td>
+      <td><select name="hr_id">
+        <% @hrs.each do |hr| %>
+        <option value="<%=hr.id%>"><%= hr.labour_type%></option>
+        <%end%>
+        </select></td>
+        </tr>
+        <tr>
+      <td><label for="hours_req">Hours Required</label></td>
+      <td><input type="number" name="hours_req"></td>
+        </tr>
 
-    <label for="hr_id">Labour Required</label>
-      <select name="hr_id">
-      <% @hrs.each do |hr| %>
-      <option value="<%=hr.id%>"><%= hr.labour_type%></option>
-      <%end%>
-      </select><br>
-
-      <label for="hours_req">Labour Required</label>
-        <input type="number" name="hours_req"><br>
-
-  <input type="submit" name="Add Job">
-  
-
-
+ <tr> 
+  <td> <input type="submit" name="Add Job"> 
+ </tr>
+</table>
 </form>
