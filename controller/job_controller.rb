@@ -22,8 +22,9 @@ post '/jobs' do
 end
 
 get '/jobs/:id' do
-  @stock = Stock.all
+  # binding.pry
   @job = Job.find(params[:id])
+  @stock = Stock.find(@job.stock_id)
   erb :'jobs/show'
 end
 

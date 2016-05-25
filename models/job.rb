@@ -4,7 +4,7 @@ require_relative('../db/sql_runner.rb')
 class Job
   attr_accessor(:id, :client, :address, :stock_id, :stock_req, :hr_id, :hours_req, :hrs_price, :stock_price)
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i()
     @client = options['client']
     @address = options['address']
     @stock_id = options['stock_id'].to_i
@@ -52,8 +52,8 @@ class Job
 
   def show_stock
     sql = "SELECT stock_type FROM stock_levels WHERE id = #{@stock_id}"
-    name = SqlRunner.run_sql(sql).first
-    return name['stock_type']
+    name = SqlRunner.run_sql(sql)
+    return name[0]['stock_type']
   end
 
   def self.map_items(sql)
